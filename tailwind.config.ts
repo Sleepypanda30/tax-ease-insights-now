@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,28 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// TaxEase custom colors
+				taxblue: {
+					light: '#E6F3FF',
+					DEFAULT: '#0078D7',
+					dark: '#005A9E'
+				},
+				taxgreen: {
+					light: '#E6F9F0',
+					DEFAULT: '#00B67A',
+					dark: '#008C5F'
+				},
+				taxgray: {
+					100: '#F8F9FA',
+					200: '#E9ECEF',
+					300: '#DEE2E6',
+					400: '#CED4DA',
+					500: '#ADB5BD',
+					600: '#6C757D',
+					700: '#495057',
+					800: '#343A40',
+					900: '#212529'
 				}
 			},
 			borderRadius: {
@@ -84,11 +107,26 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'pulse-scale': {
+					'0%, 100%': { transform: 'scale(1)' },
+					'50%': { transform: 'scale(1.05)' }
+				},
+				'fade-in': {
+					'0%': { opacity: '0' },
+					'100%': { opacity: '1' }
+				},
+				'slide-up': {
+					'0%': { transform: 'translateY(10px)', opacity: '0' },
+					'100%': { transform: 'translateY(0)', opacity: '1' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'pulse-scale': 'pulse-scale 2s ease-in-out infinite',
+				'fade-in': 'fade-in 0.3s ease-out',
+				'slide-up': 'slide-up 0.4s ease-out'
 			}
 		}
 	},
