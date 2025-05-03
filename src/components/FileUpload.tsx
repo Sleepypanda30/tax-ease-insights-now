@@ -88,17 +88,17 @@ const FileUpload: React.FC<FileUploadProps> = ({ onFileSelected, isLoading }) =>
       onDrop={handleDrop}
       className="w-full"
     >
-      <Card className={`border-2 border-dashed p-6 text-center transition-colors ${dragActive ? 'border-taxblue bg-taxblue-light' : 'border-taxgray-300'}`}>
+      <Card className={`border-2 border-dashed p-6 text-center transition-colors glass-card ${dragActive ? 'border-brand-blue bg-brand-blue/10' : 'border-brand-lightgray'}`}>
         <div className="flex flex-col items-center justify-center space-y-4">
-          <div className="bg-taxblue-light p-4 rounded-full">
-            <Upload className="w-10 h-10 text-taxblue" />
+          <div className="bg-brand-blue/20 p-4 rounded-full">
+            <Upload className="w-10 h-10 text-brand-blue" />
           </div>
           <div>
-            <h3 className="text-lg font-medium">Upload Tax Document</h3>
-            <p className="text-taxgray-500 text-sm mt-1">
+            <h3 className="text-lg font-medium text-white">Upload Tax Document</h3>
+            <p className="text-taxgray-600 text-sm mt-1">
               Drag & drop your tax document, or click to browse
             </p>
-            <p className="text-taxgray-400 text-xs mt-1">
+            <p className="text-taxgray-500 text-xs mt-1">
               Supports PDF, JPG, PNG (max 10MB)
             </p>
           </div>
@@ -113,7 +113,7 @@ const FileUpload: React.FC<FileUploadProps> = ({ onFileSelected, isLoading }) =>
           <Button 
             onClick={handleButtonClick}
             disabled={isLoading}
-            className="bg-taxblue hover:bg-taxblue-dark transition-colors"
+            className="bg-brand-blue hover:bg-brand-blue/80 transition-colors"
           >
             {isLoading ? "Uploading..." : "Select File"}
           </Button>

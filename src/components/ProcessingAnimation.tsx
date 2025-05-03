@@ -10,35 +10,35 @@ const ProcessingAnimation: React.FC<ProcessingAnimationProps> = ({ status, progr
   return (
     <div className="flex flex-col items-center justify-center space-y-8 py-8">
       {/* Document with scanning animation */}
-      <div className="relative w-40 h-52 bg-white shadow-lg rounded-md overflow-hidden">
+      <div className="relative w-40 h-52 bg-brand-lightgray shadow-lg rounded-md overflow-hidden border border-white/5">
         {/* Document content lines */}
         <div className="p-4 space-y-2">
-          <div className="h-2 bg-taxgray-200 rounded w-3/4"></div>
-          <div className="h-2 bg-taxgray-200 rounded w-5/6"></div>
-          <div className="h-2 bg-taxgray-200 rounded w-2/3"></div>
-          <div className="h-2 bg-taxgray-200 rounded w-4/5"></div>
-          <div className="h-2 bg-taxgray-200 rounded w-3/4"></div>
-          <div className="h-2 bg-taxgray-200 rounded w-5/6"></div>
-          <div className="h-2 bg-taxgray-200 rounded w-2/3"></div>
-          <div className="h-2 bg-taxgray-200 rounded w-4/5"></div>
+          <div className="h-2 bg-brand-darkgray rounded w-3/4"></div>
+          <div className="h-2 bg-brand-darkgray rounded w-5/6"></div>
+          <div className="h-2 bg-brand-darkgray rounded w-2/3"></div>
+          <div className="h-2 bg-brand-darkgray rounded w-4/5"></div>
+          <div className="h-2 bg-brand-darkgray rounded w-3/4"></div>
+          <div className="h-2 bg-brand-darkgray rounded w-5/6"></div>
+          <div className="h-2 bg-brand-darkgray rounded w-2/3"></div>
+          <div className="h-2 bg-brand-darkgray rounded w-4/5"></div>
         </div>
         
         {/* Scanning animation */}
-        <div className="absolute inset-x-0 top-0 h-1 bg-taxblue opacity-70" style={{ 
+        <div className="absolute inset-x-0 top-0 h-1 bg-brand-blue opacity-70" style={{ 
           animation: 'scanMove 2s ease-in-out infinite',
-          boxShadow: '0 0 8px 2px rgba(0, 120, 215, 0.5)'
+          boxShadow: '0 0 8px 2px rgba(2, 119, 189, 0.5)'
         }}></div>
         
         {/* Extraction points */}
-        <div className="absolute top-8 left-6 w-20 h-2 bg-taxgreen opacity-0" style={{ 
+        <div className="absolute top-8 left-6 w-20 h-2 bg-brand-green opacity-0" style={{ 
           animation: 'highlight 4s ease-in-out infinite',
           animationDelay: '0.5s'
         }}></div>
-        <div className="absolute top-16 left-10 w-16 h-2 bg-taxgreen opacity-0" style={{ 
+        <div className="absolute top-16 left-10 w-16 h-2 bg-brand-green opacity-0" style={{ 
           animation: 'highlight 4s ease-in-out infinite',
           animationDelay: '1.5s'
         }}></div>
-        <div className="absolute top-24 left-8 w-12 h-2 bg-taxgreen opacity-0" style={{ 
+        <div className="absolute top-24 left-8 w-12 h-2 bg-brand-green opacity-0" style={{ 
           animation: 'highlight 4s ease-in-out infinite',
           animationDelay: '2.5s'
         }}></div>
@@ -50,9 +50,9 @@ const ProcessingAnimation: React.FC<ProcessingAnimationProps> = ({ status, progr
           <span className="text-sm font-medium text-taxgray-700">{status}</span>
           <span className="text-sm font-medium text-taxgray-700">{Math.round(progress)}%</span>
         </div>
-        <div className="w-full bg-taxgray-200 rounded-full h-2">
+        <div className="w-full bg-brand-lightgray rounded-full h-2">
           <div 
-            className="bg-taxblue h-2 rounded-full transition-all duration-300" 
+            className="bg-brand-blue h-2 rounded-full transition-all duration-300" 
             style={{ width: `${progress}%` }}
           ></div>
         </div>
@@ -61,19 +61,19 @@ const ProcessingAnimation: React.FC<ProcessingAnimationProps> = ({ status, progr
       {/* Extraction details */}
       <div className="space-y-3 w-full max-w-xs">
         <div className="flex items-center text-sm">
-          <div className={`w-5 h-5 flex-shrink-0 rounded-full flex items-center justify-center ${progress > 25 ? 'bg-taxgreen' : 'bg-taxgray-300'} mr-3`}>
+          <div className={`w-5 h-5 flex-shrink-0 rounded-full flex items-center justify-center ${progress > 25 ? 'bg-brand-green' : 'bg-brand-lightgray'} mr-3`}>
             {progress > 25 && <span className="text-white text-xs">✓</span>}
           </div>
           <span className={progress > 25 ? 'text-taxgray-700' : 'text-taxgray-500'}>Extracting document data</span>
         </div>
         <div className="flex items-center text-sm">
-          <div className={`w-5 h-5 flex-shrink-0 rounded-full flex items-center justify-center ${progress > 50 ? 'bg-taxgreen' : 'bg-taxgray-300'} mr-3`}>
+          <div className={`w-5 h-5 flex-shrink-0 rounded-full flex items-center justify-center ${progress > 50 ? 'bg-brand-green' : 'bg-brand-lightgray'} mr-3`}>
             {progress > 50 && <span className="text-white text-xs">✓</span>}
           </div>
           <span className={progress > 50 ? 'text-taxgray-700' : 'text-taxgray-500'}>Analyzing tax information</span>
         </div>
         <div className="flex items-center text-sm">
-          <div className={`w-5 h-5 flex-shrink-0 rounded-full flex items-center justify-center ${progress > 75 ? 'bg-taxgreen' : 'bg-taxgray-300'} mr-3`}>
+          <div className={`w-5 h-5 flex-shrink-0 rounded-full flex items-center justify-center ${progress > 75 ? 'bg-brand-green' : 'bg-brand-lightgray'} mr-3`}>
             {progress > 75 && <span className="text-white text-xs">✓</span>}
           </div>
           <span className={progress > 75 ? 'text-taxgray-700' : 'text-taxgray-500'}>Generating personalized insights</span>

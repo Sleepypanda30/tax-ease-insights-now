@@ -1,7 +1,8 @@
 
 import React from "react";
 import { cn } from "@/lib/utils";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
+import { Home, Upload, FileText, MessageSquare } from "lucide-react";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -27,11 +28,11 @@ const Layout: React.FC<LayoutProps> = ({ children, className, hideNav = false })
       </main>
       
       {!hideNav && (
-        <nav className="bg-white border-t border-gray-200 flex justify-around py-2">
-          <NavItem path="/" icon="home" label="Home" isActive={isActive("/")} />
-          <NavItem path="/upload" icon="upload" label="Upload" isActive={isActive("/upload")} />
-          <NavItem path="/advice" icon="file-text" label="Insights" isActive={isActive("/advice")} />
-          <NavItem path="/chat" icon="message-square" label="Chat" isActive={isActive("/chat")} />
+        <nav className="bg-brand-dark border-t border-brand-lightgray flex justify-around py-2 fixed bottom-0 left-0 right-0 max-w-md mx-auto">
+          <NavItem path="/" icon={<Home size={20} />} label="Home" isActive={isActive("/")} />
+          <NavItem path="/upload" icon={<Upload size={20} />} label="Upload" isActive={isActive("/upload")} />
+          <NavItem path="/advice" icon={<FileText size={20} />} label="Insights" isActive={isActive("/advice")} />
+          <NavItem path="/chat" icon={<MessageSquare size={20} />} label="Chat" isActive={isActive("/chat")} />
         </nav>
       )}
     </div>
@@ -40,26 +41,42 @@ const Layout: React.FC<LayoutProps> = ({ children, className, hideNav = false })
 
 interface NavItemProps {
   path: string;
-  icon: string;
+  icon: React.ReactNode;
   label: string;
   isActive: boolean;
 }
 
 const NavItem: React.FC<NavItemProps> = ({ path, icon, label, isActive }) => {
-  const iconClass = `lucide-${icon}`;
+  const activeColor = getColorForPath(path);
   
   return (
-    <a 
-      href={path} 
+    <Link 
+      to={path} 
       className={cn(
-        "flex flex-col items-center justify-center text-xs px-2", 
-        isActive ? "text-taxblue" : "text-taxgray-500"
+        "flex flex-col items-center justify-center text-xs px-2 py-1", 
+        isActive ? activeColor : "text-taxgray-600"
       )}
     >
-      <span className={cn("w-5 h-5 mb-1", iconClass)} />
+      <span className="mb-1">{icon}</span>
       <span>{label}</span>
-    </a>
+    </Link>
   );
+};
+
+// Function to get color based on path
+const getColorForPath = (path: string): string => {
+  switch (path) {
+    case "/":
+      return "text-brand-blue";
+    case "/upload":
+      return "text-brand-orange";
+    case "/advice":
+      return "text-brand-purple";
+    case "/chat":
+      return "text-brand-green";
+    default:
+      return "text-brand-blue";
+  }
 };
 
 export default Layout;

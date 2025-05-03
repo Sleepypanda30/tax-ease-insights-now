@@ -63,27 +63,37 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// TaxEase custom colors
+				// TaxEase custom colors - updated for dark theme
 				taxblue: {
-					light: '#E6F3FF',
-					DEFAULT: '#0078D7',
-					dark: '#005A9E'
+					light: '#1E88E5',
+					DEFAULT: '#0066CC',
+					dark: '#004C99'
 				},
 				taxgreen: {
-					light: '#E6F9F0',
+					light: '#09E5A9',
 					DEFAULT: '#00B67A',
 					dark: '#008C5F'
 				},
 				taxgray: {
-					100: '#F8F9FA',
-					200: '#E9ECEF',
-					300: '#DEE2E6',
-					400: '#CED4DA',
-					500: '#ADB5BD',
-					600: '#6C757D',
-					700: '#495057',
-					800: '#343A40',
-					900: '#212529'
+					100: '#2A2A2A',
+					200: '#333333',
+					300: '#444444',
+					400: '#555555',
+					500: '#777777',
+					600: '#999999',
+					700: '#BBBBBB',
+					800: '#DDDDDD',
+					900: '#FFFFFF'
+				},
+				// New brand colors from the image
+				brand: {
+					purple: '#8E24AA',
+					orange: '#D95F00',
+					blue: '#0277BD',
+					green: '#2ECC71',
+					dark: '#121212',
+					darkgray: '#1E1E1E',
+					lightgray: '#2A2A2A'
 				}
 			},
 			borderRadius: {

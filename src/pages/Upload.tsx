@@ -76,8 +76,8 @@ const Upload = () => {
     <Layout>
       <div className="flex flex-col h-full">
         <div className="mb-6">
-          <h1 className="text-2xl font-bold text-taxgray-800">Upload Document</h1>
-          <p className="text-taxgray-600 text-sm">
+          <h1 className="text-2xl font-bold text-white">Upload Document</h1>
+          <p className="text-taxgray-700 text-sm">
             Upload your tax transcript, W-2, or 1099 form to get started
           </p>
         </div>
@@ -96,7 +96,7 @@ const Upload = () => {
               isLoading={isUploading}
             />
             
-            <div className="mt-6 p-4 bg-taxgray-50 rounded-lg">
+            <div className="mt-6 p-4 glass-card">
               <h3 className="text-sm font-medium text-taxgray-700 mb-2">Supported documents</h3>
               <ul className="text-sm text-taxgray-600 space-y-1 list-disc pl-5">
                 <li>IRS tax transcript</li>
