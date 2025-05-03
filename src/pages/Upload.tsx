@@ -41,7 +41,7 @@ const Upload = () => {
       "Identifying tax information",
       "Analyzing tax data",
       "Finding potential savings",
-      "Generating personalized advice",
+      "Generating personalized insights",
       "Finalizing results"
     ];
     

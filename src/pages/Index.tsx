@@ -49,7 +49,7 @@ const Index = () => {
             
             <FeatureCard
               icon={<FileText className="h-6 w-6 text-amber-500" />}
-              title="Get Personalized Advice"
+              title="Get Personalized Insights"
               description="Receive tailored tax insights and potential savings"
               className="animate-delay-600"
             />

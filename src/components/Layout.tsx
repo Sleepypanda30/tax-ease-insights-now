@@ -30,7 +30,7 @@ const Layout: React.FC<LayoutProps> = ({ children, className, hideNav = false })
         <nav className="bg-white border-t border-gray-200 flex justify-around py-2">
           <NavItem path="/" icon="home" label="Home" isActive={isActive("/")} />
           <NavItem path="/upload" icon="upload" label="Upload" isActive={isActive("/upload")} />
-          <NavItem path="/advice" icon="file-text" label="Advice" isActive={isActive("/advice")} />
+          <NavItem path="/advice" icon="file-text" label="Insights" isActive={isActive("/advice")} />
           <NavItem path="/chat" icon="message-square" label="Chat" isActive={isActive("/chat")} />
         </nav>
       )}

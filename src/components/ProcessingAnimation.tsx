@@ -76,11 +76,12 @@ const ProcessingAnimation: React.FC<ProcessingAnimationProps> = ({ status, progr
           <div className={`w-5 h-5 flex-shrink-0 rounded-full flex items-center justify-center ${progress > 75 ? 'bg-taxgreen' : 'bg-taxgray-300'} mr-3`}>
             {progress > 75 && <span className="text-white text-xs">✓</span>}
           </div>
-          <span className={progress > 75 ? 'text-taxgray-700' : 'text-taxgray-500'}>Generating personalized advice</span>
+          <span className={progress > 75 ? 'text-taxgray-700' : 'text-taxgray-500'}>Generating personalized insights</span>
         </div>
       </div>
       
-      <style jsx>{`
+      <style>
+        {`
         @keyframes scanMove {
           0%, 100% { transform: translateY(0); }
           50% { transform: translateY(200px); }
@@ -89,7 +90,8 @@ const ProcessingAnimation: React.FC<ProcessingAnimationProps> = ({ status, progr
           0%, 100% { opacity: 0; }
           25%, 75% { opacity: 0.7; }
         }
-      `}</style>
+        `}
+      </style>
     </div>
   );
 };
